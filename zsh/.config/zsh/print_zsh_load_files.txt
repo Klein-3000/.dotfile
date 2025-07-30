@@ -1,0 +1,8 @@
+if [[ -d $HOME/.config/zsh ]]; then
+	for file in "$HOME/.config/zsh"/**/*.zsh; do
+		if [[ -f $file ]]; then
+			echo $file
+		fi
+	done
+fi
+

@@ -1,0 +1,24 @@
+# 自定义转义键，在插入模式下使用 'jj' 作为快速退出到普通模式的键
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+
+# 定义 zvm_after_select_vi_mode 函数来更新vi模式指示器
+function zvm_after_select_vi_mode() {
+  case $ZVM_MODE in
+    $ZVM_MODE_NORMAL)
+      # 设置提示符为 NORMAL 或其他你想要的样式
+      PROMPT='[NORMAL] %{$fg[green]%}%~%{$reset_color%} > '
+    ;;
+    $ZVM_MODE_INSERT)
+      # 设置提示符为 INSERT 或其他你想要的样式
+      PROMPT='[INSERT] %{$fg[red]%}%~%{$reset_color%} > '
+    ;;
+    $ZVM_MODE_VISUAL|$ZVM_MODE_VISUAL_LINE)
+      # 设置提示符为 VISUAL 或其他你想要的样式
+      PROMPT='[VISUAL] %{$fg[yellow]%}%~%{$reset_color%} > '
+    ;;
+    *)
+      PROMPT='%{$fg[default]%}%~%{$reset_color%} > '
+    ;;
+  esac
+}
+
