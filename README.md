@@ -1,5 +1,5 @@
 # mylinux
-## command configure
+## command configure  
 1. fastfetch
 2. fzf
 3. nvim
