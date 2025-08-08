@@ -1,0 +1,7 @@
+fzf
+fastfetch
+nvim
+vim
+zsh
+gitconfig
+tmux

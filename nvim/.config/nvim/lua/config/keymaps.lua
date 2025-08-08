@@ -11,7 +11,7 @@ key('i', '<C-k>', '<Up>',     { silent = true, noremap = true, desc = "Move Up" 
 key('i', '<C-l>', '<Right>',  { silent = true, noremap = true, desc = "Move Right" })
 
 -- ========== Visual Mode ==========
-key("v", "jj", "<esc>")
+-- key("v", "jj", "<esc>")
 key("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Line Down" })
 key("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Line Up" })
 
