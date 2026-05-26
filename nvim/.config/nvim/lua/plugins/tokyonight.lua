@@ -30,6 +30,6 @@ return {
       on_highlights = nil,
     })
 
-    vim.cmd([[colorscheme tokyonight]])
+    vim.cmd([[colorscheme tokyonight-night]])
   end,
 }

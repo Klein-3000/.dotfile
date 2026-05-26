@@ -43,3 +43,28 @@ vim.api.nvim_create_autocmd("BufEnter", {
     pattern = "*",
     command = "set fo-=c fo-=r fo-=o",
 })
+
+-- ======================================
+-- 新增：OSC52 剪贴板配置（支持 SSH 下复制到系统剪贴板）
+-- ======================================
+if not vim.g.neovide then
+    local function paste()
+        -- 从默认寄存器 "" 中获取内容，并按换行符分割
+        return {
+            vim.fn.split(vim.fn.getreg(""), "\n"),
+            vim.fn.getregtype(""), -- 同时返回寄存器类型
+        }
+    end
+
+    vim.g.clipboard = {
+        name = 'OSC 52',
+        copy = {
+            ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+            ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+        },
+        paste = {
+            ['+'] = paste,
+            ['*'] = paste,
+        },
+    }
+end
