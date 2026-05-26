@@ -26,3 +26,14 @@ alias scsts='systemctl status'
 alias scen='systemctl enable'
 alias scdis='systemctl disable'
 alias scrl='systemctl daemon-reload'
+
+# `permanent` 永久
+alias fwap='firewall-cmd --add-port'
+alias fwas='firewall-cmd --add-service'
+alias fwrp='firewall-cmd --remove-port'
+alias fwrs='firewall-cmd --remove-service'
+alias fwre='firewall-cmd --reload'
+alias fwlp='firewall-cmd --list-ports'
+alias fwls='firewall-cmd --list-services'
+
+alias compose='docker compose'
